@@ -97,9 +97,10 @@ All models use the following hyperparameters (see `configs/model_configs.yaml`):
 |-----------|-------|
 | LoRA rank (r) | 64 |
 | LoRA alpha (α) | 64 |
-| Learning rate | 2e-4 |
-| Batch size | 2 |
-| Gradient accumulation | 4 |
+| Learning rate | 1e-4 (Phi: 5e-5) |
+| Batch size | 4 |
+| Gradient accumulation | 2 |
+| Effective batch size | 8 |
 | Epochs | 3 |
 | Quantization | 4-bit (QLoRA) |
 

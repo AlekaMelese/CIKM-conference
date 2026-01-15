@@ -10,7 +10,7 @@ finetuning:
   lora:
     r: 64                      # LoRA rank
     alpha: 64                  # LoRA alpha (scaling factor)
-    dropout: 0.05              # LoRA dropout
+    dropout: 0.1               # LoRA dropout (0.05 for Qwen2)
     target_modules:            # Modules to apply LoRA
       - q_proj
       - k_proj
@@ -28,12 +28,12 @@ finetuning:
 
   # Training parameters
   training:
-    batch_size: 2
-    gradient_accumulation_steps: 4
+    batch_size: 4
+    gradient_accumulation_steps: 2
     effective_batch_size: 8    # batch_size * gradient_accumulation
-    learning_rate: 2.0e-4
+    learning_rate: 1.0e-4      # (Phi: 5e-5)
     lr_scheduler: "linear"
-    warmup_ratio: 0.03
+    warmup_steps: 10
     num_epochs: 3
     max_seq_length: 4096
     gradient_checkpointing: true
@@ -41,8 +41,8 @@ finetuning:
 
   # Optimizer
   optimizer:
-    name: "adamw_8bit"
-    weight_decay: 0.01
+    name: "adamw_8bit"         # paged_adamw for Qwen2
+    weight_decay: 0.05
 
 # ============================================================
 # Phase 2: RAG Configuration
