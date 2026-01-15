@@ -29,6 +29,23 @@ Six LLMs across two output formats (structured and narrative):
 - **Reranking**: MedCPT cross-encoder for retrieval refinement
 - **Retrieval**: FAISS index with top-20 candidates, reranked to top-3
 
+### Explainability (Phase 3)
+Three mechanisms for clinical transparency:
+
+1. **Confidence Scoring**: Multi-factor reliability assessment combining:
+   - Retrieval quality (0.25 weight)
+   - Structure completeness (0.20 weight)
+   - Input-output consistency (0.25 weight)
+   - Length appropriateness (0.10 weight)
+   - Entity preservation (0.20 weight)
+
+2. **Factual Alignment**: Sentence-level verification using S-PubMedBERT embeddings to classify each generated sentence as:
+   - SUPPORTED (≥0.70 similarity to source)
+   - PARTIAL (0.50-0.70 similarity)
+   - UNSUPPORTED (<0.50 similarity, potential hallucination)
+
+3. **Evidence Attribution**: Traces which retrieved cases influenced each generated section through post-hoc embedding analysis, achieving 91% traceability
+
 ## Installation
 
 ```bash
