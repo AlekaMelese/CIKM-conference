@@ -10,7 +10,7 @@ Clinical discharge summaries are essential for care continuity but require 5-10 
 ### Approach
 We present a three-phase hybrid framework:
 
-1. **Phase 1 - QLoRA Fine-tuning**: Parameter-efficient adaptation of 6 LLMs on 3,000 MIMIC-IV discharge summaries using 4-bit quantization
+1. **Phase 1 - QLoRA Fine-tuning**: Parameter-efficient adaptation of 6 LLMs on MIMIC-IV discharge summaries using 4-bit quantization
 2. **Phase 2 - Hybrid PEFT+RAG**: Retrieved similar cases serve as **structural templates** (not content sources), guiding output format while all facts come strictly from the source note
 3. **Phase 3 - Clinical Transparency**: Confidence scoring, factual alignment verification, and evidence attribution for safe deployment
 
