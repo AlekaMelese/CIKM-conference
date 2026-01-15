@@ -30,7 +30,7 @@ Six LLMs across two output formats (structured and narrative):
 - **Retrieval**: FAISS index with top-20 candidates, reranked to top-3
 
 ### Explainability (Phase 3)
-Three mechanisms for clinical transparency:
+To ensure clinical transparency, build trust in AI-assisted documentation, and enable safe deployment in real-world healthcare settings, we propose a model-agnostic, medical-specific explainability framework comprising seven complementary techniques applied to all test samples from each of the six evaluated models. This provides clinical trust and interpretability for hybrid model-generated discharge summaries. Our approach provides insight into how the model makes decisions, evidence provenance, multi-dimensional confidence assessment, clinical reasoning transparency, counterfactual causal validation, sentence-level factual grounding, attention pattern analysis, and token-level importance enabling systematic identification of architectures with genuine medical domain understanding versus those relying on superficial pattern matching. Three mechanisms for clinical transparency:
 
 1. **Confidence Scoring**: Multi-factor reliability assessment combining:
    - Retrieval quality (0.25 weight)
