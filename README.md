@@ -4,13 +4,30 @@ This repository contains the implementation for **"Reducing Hallucination in Cli
 
 ## Overview
 
-We present a hybrid framework combining Parameter-Efficient Fine-Tuning (PEFT) with Retrieval-Augmented Generation (RAG) for generating structured clinical discharge summaries with reduced hallucination rates.
+### Problem
+Clinical discharge summaries are essential for care continuity but require 5-10 minutes per patient to write. Large Language Models (LLMs) can automate this task but suffer from **hallucination**—generating clinically plausible but factually incorrect information—which poses serious patient safety risks.
 
-### Key Features
-- **Phase 1**: QLoRA fine-tuning of 6 LLMs (Llama-3.1-8B, Mistral-7B, BioMistral-7B, Gemma-2-9B, Phi-3.5-Mini, Qwen2.5-7B)
-- **Phase 2**: Hybrid PEFT+RAG with S-PubMedBERT embeddings and MedCPT cross-encoder reranking
-- **Phase 3**: Clinical transparency via confidence scoring, factual alignment, and evidence attribution
-- **Dual Format**: Both structured (11-section) and narrative output formats
+### Approach
+We present a three-phase hybrid framework:
+
+1. **Phase 1 - QLoRA Fine-tuning**: Parameter-efficient adaptation of 6 LLMs on 3,000 MIMIC-IV discharge summaries using 4-bit quantization
+2. **Phase 2 - Hybrid PEFT+RAG**: Retrieved similar cases serve as **structural templates** (not content sources), guiding output format while all facts come strictly from the source note
+3. **Phase 3 - Clinical Transparency**: Confidence scoring, factual alignment verification, and evidence attribution for safe deployment
+
+### Key Contributions
+- Hybrid PEFT+RAG reduces hallucination by **up to 40%** compared to fine-tuning alone
+- Structured 11-section format achieves **100% section completeness** with 14.3 percentage points lower hallucination than narrative
+- **Llama-3.1-8B** emerges as optimal with 18.5% hallucination rate and highest ROUGE scores
+- Confidence scoring flags 77-83% of summaries as suitable for clinical use
+
+### Models Evaluated
+Six LLMs across two output formats (structured and narrative):
+- Llama-3.1-8B, Mistral-7B, BioMistral-7B, Gemma-2-9B, Phi-3.5-Mini, Qwen2.5-7B
+
+### Technical Components
+- **Embeddings**: S-PubMedBERT-MS-MARCO for medical-domain semantic similarity
+- **Reranking**: MedCPT cross-encoder for retrieval refinement
+- **Retrieval**: FAISS index with top-20 candidates, reranked to top-3
 
 ## Installation
 
