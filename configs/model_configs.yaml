@@ -1,0 +1,163 @@
+# Model Configurations for Hybrid PEFT+RAG Clinical Summarization
+# CHIL 2026 Submission
+
+# ============================================================
+# Phase 1: QLoRA Fine-tuning Configuration
+# ============================================================
+
+finetuning:
+  # LoRA parameters
+  lora:
+    r: 64                      # LoRA rank
+    alpha: 64                  # LoRA alpha (scaling factor)
+    dropout: 0.05              # LoRA dropout
+    target_modules:            # Modules to apply LoRA
+      - q_proj
+      - k_proj
+      - v_proj
+      - o_proj
+      - gate_proj
+      - up_proj
+      - down_proj
+
+  # Quantization
+  quantization:
+    bits: 4                    # 4-bit quantization (QLoRA)
+    quant_type: "nf4"          # Normal float 4-bit
+    double_quant: true         # Double quantization for memory efficiency
+
+  # Training parameters
+  training:
+    batch_size: 2
+    gradient_accumulation_steps: 4
+    effective_batch_size: 8    # batch_size * gradient_accumulation
+    learning_rate: 2.0e-4
+    lr_scheduler: "linear"
+    warmup_ratio: 0.03
+    num_epochs: 3
+    max_seq_length: 4096
+    gradient_checkpointing: true
+    fp16: true
+
+  # Optimizer
+  optimizer:
+    name: "adamw_8bit"
+    weight_decay: 0.01
+
+# ============================================================
+# Phase 2: RAG Configuration
+# ============================================================
+
+rag:
+  # Embedding model
+  embedding:
+    model: "pritamdeka/S-PubMedBert-MS-MARCO"
+    dimension: 768
+    normalize: true
+
+  # FAISS index
+  index:
+    type: "IndexFlatIP"        # Inner product (cosine similarity)
+    nlist: 100                 # Number of clusters (if using IVF)
+
+  # Retrieval parameters
+  retrieval:
+    initial_k: 20              # Initial dense retrieval candidates
+    final_k: 3                 # Final top-k after reranking
+
+  # Cross-encoder reranking
+  reranker:
+    model: "ncbi/MedCPT-Cross-Encoder"
+    max_length: 512
+
+# ============================================================
+# Phase 3: Explainability Configuration
+# ============================================================
+
+explainability:
+  # Confidence scoring weights
+  confidence:
+    retrieval_quality: 0.25
+    structure_completeness: 0.20
+    input_consistency: 0.25
+    length_appropriateness: 0.10
+    entity_preservation: 0.20
+
+  # Confidence thresholds
+  thresholds:
+    high: 0.80
+    moderate: 0.60
+    low: 0.40
+
+  # Factual alignment
+  factual_alignment:
+    supported_threshold: 0.70
+    partial_threshold: 0.50
+    embedding_model: "pritamdeka/S-PubMedBert-MS-MARCO"
+
+# ============================================================
+# Model-specific configurations
+# ============================================================
+
+models:
+  llama:
+    name: "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit"
+    max_seq_length: 4096
+
+  mistral:
+    name: "unsloth/mistral-7b-instruct-v0.3-bnb-4bit"
+    max_seq_length: 4096
+
+  biomistral:
+    name: "BioMistral/BioMistral-7B"
+    max_seq_length: 4096
+
+  gemma:
+    name: "unsloth/gemma-2-9b-it-bnb-4bit"
+    max_seq_length: 4096
+
+  phi:
+    name: "unsloth/Phi-3.5-mini-instruct-bnb-4bit"
+    max_seq_length: 4096
+
+  qwen:
+    name: "unsloth/Qwen2.5-7B-Instruct-bnb-4bit"
+    max_seq_length: 4096
+
+# ============================================================
+# Output format configurations
+# ============================================================
+
+output_formats:
+  structured:
+    sections:
+      - "Case Type"
+      - "Patient & Service"
+      - "Chief Complaint / Admission Context"
+      - "History of Present Illness (HPI)"
+      - "Past Medical / Surgical History"
+      - "Medications (Discharge / Ongoing)"
+      - "Physical Examination"
+      - "Investigations / Labs / Imaging"
+      - "Assessment / Impression"
+      - "Discharge Condition"
+      - "Follow-Up & Recommendations"
+
+  narrative:
+    style: "flowing paragraphs"
+    max_length: 1024
+
+# ============================================================
+# Dataset configuration
+# ============================================================
+
+dataset:
+  name: "MIMIC-IV"
+  split:
+    train: 0.70
+    validation: 0.15
+    test: 0.15
+  preprocessing:
+    max_input_tokens: 10484
+    max_target_tokens: 3584
+    abbreviation_expansion: true
