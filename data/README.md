@@ -63,7 +63,6 @@ Each record contains:
 
 | Metric | Value |
 |--------|-------|
-| Total samples | 3,000 |
 | Avg input length | 7,331 chars |
 | Avg target length | 2,443 chars |
 | Max input tokens | 10,484 |
