@@ -44,12 +44,20 @@ See `data/README.md` for preprocessing instructions.
 ```
 ├── src/
 │   ├── finetuning/          # Phase 1: QLoRA fine-tuning scripts
-│   │   ├── llama/
-│   │   ├── mistral/
-│   │   ├── biomistral/
-│   │   ├── gemma/
-│   │   ├── phi/
-│   │   └── qwen/
+│   │   ├── structured/      # Structured (11-section) format
+│   │   │   ├── llama/
+│   │   │   ├── mistral/
+│   │   │   ├── biomistral/
+│   │   │   ├── gemma/
+│   │   │   ├── phi/
+│   │   │   └── qwen/
+│   │   └── narrative/       # Narrative (paragraph) format
+│   │       ├── llama/
+│   │       ├── mistral/
+│   │       ├── biomistral/
+│   │       ├── gemma/
+│   │       ├── phi/
+│   │       └── qwen/
 │   ├── rag/                 # Phase 2: RAG pipeline
 │   │   ├── structured/      # Structured format RAG
 │   │   └── narrative/       # Narrative format RAG
@@ -66,10 +74,10 @@ See `data/README.md` for preprocessing instructions.
 
 ```bash
 # Fine-tune Llama for structured format
-python src/finetuning/llama/llama_finetune.py
+python src/finetuning/structured/llama/llama_finetune.py
 
 # Fine-tune Llama for narrative format
-python src/finetuning/llama/llama_narrative_finetune.py
+python src/finetuning/narrative/llama/llama_narrative_finetune.py
 ```
 
 ### Phase 2: RAG Inference
