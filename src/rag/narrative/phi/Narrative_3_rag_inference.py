@@ -41,8 +41,8 @@ import argparse
 import textwrap
 
 # Set HuggingFace cache to scratch to avoid home directory disk space issues
-os.environ['HF_HOME'] = '/scratch/aayalew25/.cache/huggingface'
-os.environ['TRANSFORMERS_CACHE'] = '/scratch/aayalew25/.cache/huggingface'
+os.environ['HF_HOME'] = './.cache/huggingface'
+os.environ['TRANSFORMERS_CACHE'] = './.cache/huggingface'
 
 # FAISS and retrieval
 import faiss
