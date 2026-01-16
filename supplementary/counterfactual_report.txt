@@ -1,0 +1,230 @@
+================================================================================
+COUNTERFACTUAL EXPLANATIONS REPORT
+Medical RAG System
+================================================================================
+
+
+COUNTERFACTUAL 1: 12601669-DS-21
+--------------------------------------------------------------------------------
+COUNTERFACTUAL SCENARIO: Patient does NOT have hypertension
+
+Expected Changes:
+  - Assessment: Would not mention hypertension as diagnosis
+  - Medications: Would not include hypertension-related medications: lisinopril, amlodipine, losartan, hydrochlorothiazide
+  - Past_Medical: Would not list hypertension in medical history
+
+CLINICAL REASONING: The model's mention of hypertension is likely driven by:
+  1. Condition-specific symptoms/findings in input
+  2. Related medications prescribed
+  3. Similar cases in retrieved evidence
+
+
+COUNTERFACTUAL 2: 15355703-DS-9
+--------------------------------------------------------------------------------
+COUNTERFACTUAL SCENARIO: Patient does NOT have diabetes
+
+Expected Changes:
+  - Assessment: Would not mention diabetes as diagnosis
+  - Medications: Would not include diabetes-related medications: metformin, insulin, glipizide, glyburide
+  - Past_Medical: Would not list diabetes in medical history
+
+CLINICAL REASONING: The model's mention of diabetes is likely driven by:
+  1. Condition-specific symptoms/findings in input
+  2. Related medications prescribed
+  3. Similar cases in retrieved evidence
+
+
+COUNTERFACTUAL 3: 15355703-DS-9
+--------------------------------------------------------------------------------
+COUNTERFACTUAL SCENARIO: Patient does NOT have hypertension
+
+Expected Changes:
+  - Assessment: Would not mention hypertension as diagnosis
+  - Medications: Would not include hypertension-related medications: lisinopril, amlodipine, losartan, hydrochlorothiazide
+  - Past_Medical: Would not list hypertension in medical history
+
+CLINICAL REASONING: The model's mention of hypertension is likely driven by:
+  1. Condition-specific symptoms/findings in input
+  2. Related medications prescribed
+  3. Similar cases in retrieved evidence
+
+
+COUNTERFACTUAL 4: 13465746-DS-34
+--------------------------------------------------------------------------------
+COUNTERFACTUAL SCENARIO: Patient does NOT have hypertension
+
+Expected Changes:
+  - Assessment: Would not mention hypertension as diagnosis
+  - Medications: Would not include hypertension-related medications: lisinopril, amlodipine, losartan, hydrochlorothiazide
+  - Past_Medical: Would not list hypertension in medical history
+
+CLINICAL REASONING: The model's mention of hypertension is likely driven by:
+  1. Condition-specific symptoms/findings in input
+  2. Related medications prescribed
+  3. Similar cases in retrieved evidence
+
+
+COUNTERFACTUAL 5: 11200313-DS-12
+--------------------------------------------------------------------------------
+COUNTERFACTUAL SCENARIO: Patient does NOT have diabetes
+
+Expected Changes:
+  - Assessment: Would not mention diabetes as diagnosis
+  - Medications: Would not include diabetes-related medications: metformin, insulin, glipizide, glyburide
+  - Past_Medical: Would not list diabetes in medical history
+
+CLINICAL REASONING: The model's mention of diabetes is likely driven by:
+  1. Condition-specific symptoms/findings in input
+  2. Related medications prescribed
+  3. Similar cases in retrieved evidence
+
+
+COUNTERFACTUAL 6: 11200313-DS-12
+--------------------------------------------------------------------------------
+COUNTERFACTUAL SCENARIO: Patient does NOT have hypertension
+
+Expected Changes:
+  - Assessment: Would not mention hypertension as diagnosis
+  - Medications: Would not include hypertension-related medications: lisinopril, amlodipine, losartan, hydrochlorothiazide
+  - Past_Medical: Would not list hypertension in medical history
+
+CLINICAL REASONING: The model's mention of hypertension is likely driven by:
+  1. Condition-specific symptoms/findings in input
+  2. Related medications prescribed
+  3. Similar cases in retrieved evidence
+
+
+COUNTERFACTUAL 7: 16986562-DS-14
+--------------------------------------------------------------------------------
+COUNTERFACTUAL SCENARIO: Patient does NOT have asthma
+
+Expected Changes:
+  - Assessment: Would not mention asthma as diagnosis
+  - Medications: Would not include asthma-related medications: 
+  - Past_Medical: Would not list asthma in medical history
+
+CLINICAL REASONING: The model's mention of asthma is likely driven by:
+  1. Condition-specific symptoms/findings in input
+  2. Related medications prescribed
+  3. Similar cases in retrieved evidence
+
+
+COUNTERFACTUAL 8: 15331254-DS-18
+--------------------------------------------------------------------------------
+COUNTERFACTUAL SCENARIO: Patient does NOT have hypertension
+
+Expected Changes:
+  - Assessment: Would not mention hypertension as diagnosis
+  - Medications: Would not include hypertension-related medications: lisinopril, amlodipine, losartan, hydrochlorothiazide
+  - Past_Medical: Would not list hypertension in medical history
+
+CLINICAL REASONING: The model's mention of hypertension is likely driven by:
+  1. Condition-specific symptoms/findings in input
+  2. Related medications prescribed
+  3. Similar cases in retrieved evidence
+
+
+COUNTERFACTUAL 9: 18777601-DS-8
+--------------------------------------------------------------------------------
+COUNTERFACTUAL SCENARIO: Patient does NOT have diabetes
+
+Expected Changes:
+  - Assessment: Would not mention diabetes as diagnosis
+  - Medications: Would not include diabetes-related medications: metformin, insulin, glipizide, glyburide
+  - Past_Medical: Would not list diabetes in medical history
+
+CLINICAL REASONING: The model's mention of diabetes is likely driven by:
+  1. Condition-specific symptoms/findings in input
+  2. Related medications prescribed
+  3. Similar cases in retrieved evidence
+
+
+COUNTERFACTUAL 10: 18777601-DS-8
+--------------------------------------------------------------------------------
+COUNTERFACTUAL SCENARIO: Patient does NOT have hypertension
+
+Expected Changes:
+  - Assessment: Would not mention hypertension as diagnosis
+  - Medications: Would not include hypertension-related medications: lisinopril, amlodipine, losartan, hydrochlorothiazide
+  - Past_Medical: Would not list hypertension in medical history
+
+CLINICAL REASONING: The model's mention of hypertension is likely driven by:
+  1. Condition-specific symptoms/findings in input
+  2. Related medications prescribed
+  3. Similar cases in retrieved evidence
+
+
+COUNTERFACTUAL 11: 17656580-DS-3
+--------------------------------------------------------------------------------
+COUNTERFACTUAL SCENARIO: Patient does NOT have diabetes
+
+Expected Changes:
+  - Assessment: Would not mention diabetes as diagnosis
+  - Medications: Would not include diabetes-related medications: metformin, insulin, glipizide, glyburide
+  - Past_Medical: Would not list diabetes in medical history
+
+CLINICAL REASONING: The model's mention of diabetes is likely driven by:
+  1. Condition-specific symptoms/findings in input
+  2. Related medications prescribed
+  3. Similar cases in retrieved evidence
+
+
+COUNTERFACTUAL 12: 17656580-DS-3
+--------------------------------------------------------------------------------
+COUNTERFACTUAL SCENARIO: Patient does NOT have hypertension
+
+Expected Changes:
+  - Assessment: Would not mention hypertension as diagnosis
+  - Medications: Would not include hypertension-related medications: lisinopril, amlodipine, losartan, hydrochlorothiazide
+  - Past_Medical: Would not list hypertension in medical history
+
+CLINICAL REASONING: The model's mention of hypertension is likely driven by:
+  1. Condition-specific symptoms/findings in input
+  2. Related medications prescribed
+  3. Similar cases in retrieved evidence
+
+
+COUNTERFACTUAL 13: 18229187-DS-22
+--------------------------------------------------------------------------------
+COUNTERFACTUAL SCENARIO: Patient does NOT have CAD
+
+Expected Changes:
+  - Assessment: Would not mention CAD as diagnosis
+  - Medications: Would not include CAD-related medications: aspirin, atorvastatin, clopidogrel
+  - Past_Medical: Would not list CAD in medical history
+
+CLINICAL REASONING: The model's mention of CAD is likely driven by:
+  1. Condition-specific symptoms/findings in input
+  2. Related medications prescribed
+  3. Similar cases in retrieved evidence
+
+
+COUNTERFACTUAL 14: 18229187-DS-22
+--------------------------------------------------------------------------------
+COUNTERFACTUAL SCENARIO: Patient does NOT have stroke
+
+Expected Changes:
+  - Assessment: Would not mention stroke as diagnosis
+  - Medications: Would not include stroke-related medications: 
+  - Past_Medical: Would not list stroke in medical history
+
+CLINICAL REASONING: The model's mention of stroke is likely driven by:
+  1. Condition-specific symptoms/findings in input
+  2. Related medications prescribed
+  3. Similar cases in retrieved evidence
+
+
+COUNTERFACTUAL 15: 18763864-DS-23
+--------------------------------------------------------------------------------
+COUNTERFACTUAL SCENARIO: Patient does NOT have pneumonia
+
+Expected Changes:
+  - Assessment: Would not mention pneumonia as diagnosis
+  - Medications: Would not include pneumonia-related medications: 
+  - Past_Medical: Would not list pneumonia in medical history
+
+CLINICAL REASONING: The model's mention of pneumonia is likely driven by:
+  1. Condition-specific symptoms/findings in input
+  2. Related medications prescribed
+  3. Similar cases in retrieved evidence
+
