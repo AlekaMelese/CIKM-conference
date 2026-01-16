@@ -152,7 +152,7 @@ Input Clinical Note
 └─────────────────────┘
         │
         ▼
-   Structured Summary
+   Structured and Narrative Summary
 ```
 
 ### RAG Components
