@@ -67,7 +67,7 @@ The structured output organizes discharge summaries into standardized clinical s
 | Batch size | 4 | Per device |
 | Gradient accumulation | 2 | Effective batch: 8 |
 | Epochs | 3 | |
-| Quantization | 4-bit (NF4) | QLoRA |
+| Quantization | 4-bit (NF4) via Unsloth | QLoRA |
 | Max sequence length | 4,096 | Tokens |
 | Optimizer | AdamW 8-bit | Paged for Qwen |
 | Weight decay | 0.05 | Regularization |
