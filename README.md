@@ -61,7 +61,7 @@ The structured output organizes discharge summaries into standardized clinical s
 |-----------|-------|-------|
 | LoRA rank (r) | 64 | 16 for Qwen |
 | LoRA alpha (α) | 64 | 32 for Qwen |
-| LoRA dropout | 0.0 | No dropout |
+| LoRA dropout | 0.1 | dropout |
 | Target modules | q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj | All attention + MLP |
 | Learning rate | 1e-4 | 5e-5 for Phi |
 | Batch size | 4 | Per device |
