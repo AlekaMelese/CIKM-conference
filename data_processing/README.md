@@ -36,16 +36,16 @@ After obtaining the data, run the preprocessing scripts:
 
 **Step 1: Extract discharge summaries from MIMIC-IV**
 ```bash
-python data/prepare_dataset.py \
+python data_processing/prepare_dataset.py \
     --mimic_path /path/to/mimiciv/ \
-    --output_path data/processed/
+    --output_path data_processing/processed/
 ```
 
 **Step 2: Convert to structured 11-section format**
 ```bash
-python data/structured_converter.py \
-    --input data/processed/discharge_notes.csv \
-    --output data/processed/structured_notes.csv
+python data_processing/structured_converter.py \
+    --input data_processing/processed/discharge_notes.csv \
+    --output data_processing/processed/structured_notes.csv
 ```
 
 The structured converter extracts and organizes clinical notes into 11 sections:
@@ -63,16 +63,16 @@ The structured converter extracts and organizes clinical notes into 11 sections:
 
 **Step 3: Prepare RAG corpus (for Phase 2)**
 ```bash
-python data/prepare_rag_corpus.py \
-    --input data/processed/structured_notes.csv \
-    --output data/rag_corpus/
+python data_processing/prepare_rag_corpus.py \
+    --input data_processing/processed/structured_notes.csv \
+    --output data_processing/rag_corpus/
 ```
 
 This will create:
-- `data/processed/train.json` (70%)
-- `data/processed/val.json` (15%)
-- `data/processed/test.json` (15%)
-- `data/rag_corpus/rag_corpus.csv` (train + val for retrieval)
+- `data_processing/processed/train.json` (70%)
+- `data_processing/processed/val.json` (15%)
+- `data_processing/processed/test.json` (15%)
+- `data_processing/rag_corpus/rag_corpus.csv` (train + val for retrieval)
 
 ### Data Format
 
