@@ -147,7 +147,6 @@ for sample in alignments:
 
 | Metric | Value |
 |--------|-------|
-| Test samples analyzed | 200 |
 | Average confidence score | 0.72 |
 | High confidence (≥0.70) | 77-83% |
 | Evidence traceability | 91% |
