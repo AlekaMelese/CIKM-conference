@@ -32,13 +32,34 @@ For this project, you need the following MIMIC-IV tables:
 
 ### Preprocessing
 
-After obtaining the data, run the preprocessing script:
+After obtaining the data, run the preprocessing scripts:
 
+**Step 1: Extract discharge summaries from MIMIC-IV**
 ```bash
 python src/preprocessing/prepare_dataset.py \
     --mimic_path /path/to/mimiciv/ \
     --output_path data/processed/
 ```
+
+**Step 2: Convert to structured 11-section format**
+```bash
+python data/structured_converter.py \
+    --input data/processed/discharge_notes.csv \
+    --output data/processed/structured_notes.csv
+```
+
+The structured converter extracts and organizes clinical notes into 11 sections:
+1. Case Type
+2. Patient & Service
+3. Chief Complaint / Admission Context
+4. History of Present Illness (HPI)
+5. Past Medical / Surgical History
+6. Medications (Discharge / Ongoing)
+7. Physical Examination
+8. Investigations / Labs / Imaging
+9. Assessment / Impression
+10. Discharge Condition
+11. Follow-Up & Recommendations
 
 This will create:
 - `data/processed/train.json` (70%)
