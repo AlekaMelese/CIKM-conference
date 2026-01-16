@@ -72,16 +72,6 @@ The structured output organizes discharge summaries into standardized clinical s
 | Optimizer | AdamW 8-bit | Paged for Qwen |
 | Weight decay | 0.05 | Regularization |
 
-### Training Statistics
-
-| Model | Parameters | Trainable | Training Time | Final Val Loss |
-|-------|------------|-----------|---------------|----------------|
-| Llama-3.1-8B | 8B | 1.04% | 3h 35m | 0.599 |
-| Mistral-7B | 7B | 1.04% | 4h 24m | 0.427 |
-| BioMistral-7B | 7B | 1.04% | 4h 25m | 0.377 |
-| Gemma-2-9B | 9B | 1.04% | 5h 21m | 0.445 |
-| Phi-3-Medium-14B | 14B | 1.04% | 6h 59m | 0.590 |
-| Qwen2.5-7B | 7B | 0.26% | 4h 22m | 0.768 |
 
 ### Few-Shot Prompt Template
 
