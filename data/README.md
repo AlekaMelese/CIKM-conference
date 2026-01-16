@@ -36,7 +36,7 @@ After obtaining the data, run the preprocessing scripts:
 
 **Step 1: Extract discharge summaries from MIMIC-IV**
 ```bash
-python src/preprocessing/prepare_dataset.py \
+python data/prepare_dataset.py \
     --mimic_path /path/to/mimiciv/ \
     --output_path data/processed/
 ```
@@ -61,10 +61,18 @@ The structured converter extracts and organizes clinical notes into 11 sections:
 10. Discharge Condition
 11. Follow-Up & Recommendations
 
+**Step 3: Prepare RAG corpus (for Phase 2)**
+```bash
+python data/prepare_rag_corpus.py \
+    --input data/processed/structured_notes.csv \
+    --output data/rag_corpus/
+```
+
 This will create:
 - `data/processed/train.json` (70%)
 - `data/processed/val.json` (15%)
 - `data/processed/test.json` (15%)
+- `data/rag_corpus/rag_corpus.csv` (train + val for retrieval)
 
 ### Data Format
 
