@@ -10,7 +10,7 @@ Clinical discharge summaries are essential for care continuity but require 5-10 
 ### Approach
 We present a three-phase hybrid framework:
 
-1. **Phase 1 - QLoRA Fine-tuning**: Parameter-efficient adaptation of 6 LLMs on MIMIC-IV discharge summaries using 4-bit quantization
+1. **Phase 1 - QLoRA Fine-tuning**: Parameter-efficient adaptation of 4 LLMs on MIMIC-IV discharge summaries using 4-bit quantization
 2. **Phase 2 - Hybrid PEFT+RAG**: Retrieved similar cases serve as **structural templates** (not content sources), guiding output format while all facts come strictly from the source note
 3. **Phase 3 - Clinical Transparency**: Confidence scoring, factual alignment verification, and evidence attribution for safe deployment
 
@@ -21,8 +21,8 @@ We present a three-phase hybrid framework:
 - Confidence scoring flags 77-83% of summaries as suitable for clinical use
 
 ### Models Evaluated
-Six LLMs across two output formats (structured and narrative):
-- Llama-3.1-8B-Instruct, Mistral-7B-Instruct-v0.3, BioMistral-7B, Gemma-2-9B-IT, Phi-3-Medium-14B-Instruct, Qwen2.5-7B-Instruct
+Four LLMs across two output formats (structured and narrative):
+- Llama-3.1-8B-Instruct, Gemma-2-9B-IT, Phi-3-Medium-14B-Instruct, Qwen2.5-7B-Instruct
 
 ---
 
@@ -201,8 +201,6 @@ Medications, Physical Exam, Investigations, Assessment, Discharge Condition, Fol
 | Model | Temperature | Top-P | Repetition Penalty | Max Tokens |
 |-------|-------------|-------|-------------------|------------|
 | Llama-3.1-8B | 0.4 | 0.95 | 1.10 | 2,048 |
-| Mistral-7B | 0.5 | 0.95 | 1.12 | 2,048 |
-| BioMistral-7B | 0.5 | 0.90 | 1.15 | 2,048 |
 | Gemma-2-9B | 0.6 | 0.95 | 1.10 | 2,048 |
 | Phi-3-Medium-14B | 0.7 | 0.95 | 1.12 | 2,048 |
 | Qwen2.5-7B | 0.5 | 0.95 | 1.10 | 2,048 |
@@ -280,15 +278,11 @@ To obtain access:
 │   ├── finetuning/              # Phase 1: QLoRA fine-tuning scripts
 │   │   ├── structured/          # Structured (11-section) format
 │   │   │   ├── llama/
-│   │   │   ├── mistral/
-│   │   │   ├── biomistral/
 │   │   │   ├── gemma/
 │   │   │   ├── phi/
 │   │   │   └── qwen/
 │   │   └── narrative/           # Narrative (paragraph) format
 │   │       ├── llama/
-│   │       ├── mistral/
-│   │       ├── biomistral/
 │   │       ├── gemma/
 │   │       ├── phi/
 │   │       └── qwen/
@@ -354,8 +348,6 @@ python src/explainability/4_factual_alignment.py
 | Gemma-2-9B | 0.428 | 0.324 | 0.387 | 23.9% |
 | Qwen2.5-7B | 0.439 | 0.334 | 0.395 | 27.8% |
 | Phi-3-Medium-14B | 0.432 | 0.318 | 0.389 | 25.2% |
-| Mistral-7B | 0.425 | 0.312 | 0.383 | 26.4% |
-| BioMistral-7B | 0.418 | 0.305 | 0.376 | 24.8% |
 
 ### Explainability Results
 
