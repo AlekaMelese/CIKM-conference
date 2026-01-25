@@ -481,7 +481,7 @@ Generate only the medication changes. [/INST]
     def generate_structured_summary_constrained(self, input_text: str) -> str:
         """Generate complete 11-section structured summary using section-by-section constrained generation
 
-        UPDATED: Token limits matching BioMistral 3x configuration (except Case Type=20, Patient & Service=15)
+        UPDATED: Token limits optimized token limits 3x configuration (except Case Type=20, Patient & Service=15)
         Generation parameters: temperature=0.4, repetition_penalty=1.1, top_p=0.95, length_penalty=1.0
         Improved prompts with specific examples for cleaner output
         """
@@ -496,40 +496,40 @@ Generate only the medication changes. [/INST]
         patient_service = self.generate_section(input_text, "patient_service", max_tokens=15)
         sections.append(f"\n\n•  Patient & Service: {patient_service}")
 
-        # 3. Chief Complaint (3x: 100→300 tokens, matching BioMistral)
+        # 3. Chief Complaint (3x: 100→300 tokens, optimized token limits)
         chief_complaint = self.generate_section(input_text, "chief_complaint", max_tokens=300)
         sections.append(f"\n\n•  Chief Complaint / Admission Context: {chief_complaint}")
 
-        # 4. History of Present Illness (3x: 200→600 tokens, matching BioMistral)
+        # 4. History of Present Illness (3x: 200→600 tokens, optimized token limits)
         hpi = self.generate_section(input_text, "hpi", max_tokens=600)
         sections.append(f"\n\n•  History of Present Illness (HPI): {hpi}")
 
-        # 5. Past Medical/Surgical History (3x: 150→450 tokens, matching BioMistral)
+        # 5. Past Medical/Surgical History (3x: 150→450 tokens, optimized token limits)
         pmh = self.generate_section(input_text, "pmh", max_tokens=450)
         sections.append(f"\n\n•  Past Medical / Surgical History: {pmh}")
 
-        # 6. Medications (3x: 300→900 tokens, matching BioMistral)
+        # 6. Medications (3x: 300→900 tokens, optimized token limits)
         meds = self.generate_section(input_text, "medications", max_tokens=900)
         sections.append(f"\n\n•  Medications (Discharge / Ongoing):\n    •  Discharge: {meds}")
         sections.append(f"\n    •  Ongoing: Continue home medications as previously prescribed.")
 
-        # 7. Physical Examination (3x: 150→450 tokens, matching BioMistral)
+        # 7. Physical Examination (3x: 150→450 tokens, optimized token limits)
         pe = self.generate_section(input_text, "physical_exam", max_tokens=450)
         sections.append(f"\n\n•  Physical Examination (summarized): {pe}")
 
-        # 8. Labs/Imaging (3x: 200→600 tokens, matching BioMistral)
+        # 8. Labs/Imaging (3x: 200→600 tokens, optimized token limits)
         labs = self.generate_section(input_text, "labs", max_tokens=600)
         sections.append(f"\n\n•  Investigations / Labs / Imaging (if any): {labs}")
 
-        # 9. Assessment/Impression (3x: 100→300 tokens, matching BioMistral)
+        # 9. Assessment/Impression (3x: 100→300 tokens, optimized token limits)
         assessment = self.generate_section(input_text, "assessment", max_tokens=300)
         sections.append(f"\n\n•  Assessment / Impression: {assessment}")
 
-        # 10. Discharge Condition (3x: 100→300 tokens, matching BioMistral)
+        # 10. Discharge Condition (3x: 100→300 tokens, optimized token limits)
         dc = self.generate_section(input_text, "discharge_condition", max_tokens=300)
         sections.append(f"\n\n•  Discharge Condition: {dc}")
 
-        # 11. Follow-Up (3x: 300→900 tokens, matching BioMistral)
+        # 11. Follow-Up (3x: 300→900 tokens, optimized token limits)
         followup = self.generate_section(input_text, "followup", max_tokens=900)
         sections.append(f"\n\n•  Follow-Up & Recommendations:")
         sections.append(f"\n    •  Medication Changes: {followup}")

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Mistral-7B-Instruct: Constrained Generation Evaluation on Test Set
+Gemma-2-9B: Constrained Generation Evaluation on Test Set
 
-Evaluates the fine-tuned Mistral model ONLY on the test set (10% unseen data).
+Evaluates the fine-tuned Gemma model ONLY on the test set (10% unseen data).
 Includes:
 - Section-by-section constrained generation
 - Comprehensive metrics (ROUGE, METEOR, BERTScore)
@@ -72,7 +72,7 @@ class GemmaConstrainedGenerator:
 
     def generate_section(self, input_text: str, section_name: str,
                         max_tokens: int = 200, temperature: float = 0.4) -> str:
-        """Generate a single section with focused Mistral-format prompt"""
+        """Generate a single section with focused Gemma-format prompt"""
 
         prompts = {
             "case_type": f"""[INST] Based on this clinical note, write ONLY the case type (one brief line describing the primary diagnosis/procedure):

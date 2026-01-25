@@ -27,7 +27,7 @@ class EvidenceAttributor:
         self.config = RAGConfig
         self.use_medical = use_medical
 
-        # Paths - Updated to use Final/Mistral/RAG1/outputs/
+        # Paths - Updated to use RAG outputs directory
         base_path = Path(__file__).parent.parent / "RAG1" / "outputs2"
         self.outputs_dir = base_path
         self.embedding_model_name = "pritamdeka/S-PubMedBert-MS-MARCO"

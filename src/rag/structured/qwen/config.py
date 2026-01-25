@@ -65,7 +65,7 @@ class RAGConfig:
     EMBEDDING_DIM = 768  # PubMedBERT uses 768-dim embeddings
 
     # Reranker model: Medical-domain MedCPT reranker (medical cross-encoder)
-    # Using ncbi/MedCPT-Cross-Encoder (same as successful Mistral-7B-Instruct/RAG/ medical experiments)
+    # Using ncbi/MedCPT-Cross-Encoder (medical-domain cross-encoder)
     RERANKER_MODEL_NAME = "ncbi/MedCPT-Cross-Encoder"
 
     # Phase 1 fine-tuned Qwen2-7B model path
