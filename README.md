@@ -1,6 +1,6 @@
 # Hybrid PEFT+RAG for Clinical Discharge Summarization
 
-This repository contains the implementation for **"Reducing Hallucination in Clinical Discharge Summarization via Hybrid PEFT and RAG"**, submitted to CHIL 2026.
+This repository contains the implementation for **"Explainable Structured Clinical Discharge Summarization: Reducing Hallucination via Hybrid PEFT and RAGG"**, submitted to CHIL 2026.
 
 ## Overview
 
