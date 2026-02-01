@@ -357,7 +357,7 @@ python src/explainability/4_factual_alignment.py
 | Evidence Traceability | 91% |
 | Factual Alignment (SUPPORTED) | 100% |
 | Structure Completeness | 100% |
-
+<!-- 
 ## Citation
 
 ```bibtex
@@ -368,7 +368,7 @@ python src/explainability/4_factual_alignment.py
   year={2026}
 }
 ```
-
+ -->
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
