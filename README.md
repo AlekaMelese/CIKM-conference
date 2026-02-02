@@ -5,7 +5,7 @@ This repository contains the implementation for **"Explainable Structured Clinic
 ## Overview
 
 ### Problem
-Clinical discharge summaries are essential for care continuity but require 5-10 minutes per patient to write. Large Language Models (LLMs) can automate this task but suffer from **hallucination**—generating clinically plausible but factually incorrect information—which poses serious patient safety risks.
+Clinical discharge summaries are essential for care continuity but require 5-10 minutes per patient to write. Large Language Models (LLMs) can automate this task but suffer from **hallucination**, generating clinically plausible but factually incorrect information, which poses serious patient safety risks.
 
 ### Approach
 We present a three-phase hybrid framework:
