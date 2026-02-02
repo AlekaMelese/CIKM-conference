@@ -1,6 +1,6 @@
 # Supplementary Materials
 
-This folder contains explainability output files from Phase 3 of the Hybrid PEFT+RAG framework, generated using the Phi-3-Medium-14B model on 200 test samples.
+This folder contains explainability output files from Phase 3 of the Hybrid PEFT+RAG framework, generated using the Qwen model.
 
 > **Note**: Some JSON files exceed GitHub's display limit (~1 MB) but can be downloaded or cloned normally.
 
