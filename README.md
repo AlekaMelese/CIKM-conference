@@ -250,8 +250,7 @@ Traces which retrieved cases influenced each generated section through post-hoc 
 
 ```bash
 # Clone repository
-git clone https://github.com/AlekaMelese/CHIL2026-Hybrid-PEFT-RAG.git
-cd CHIL2026-Hybrid-PEFT-RAG
+
 
 # Create virtual environment
 python -m venv venv
