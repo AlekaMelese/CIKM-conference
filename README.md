@@ -301,43 +301,6 @@ To obtain access:
 └── data_processing/             # Data preprocessing scripts
 ```
 
-## Usage
-
-### Phase 1: Fine-tuning
-
-```bash
-# Fine-tune Llama for structured format
-python src/finetuning/structured/llama/llama_finetune.py
-
-# Fine-tune Llama for narrative format
-python src/finetuning/narrative/llama/llama_narrative_finetune.py
-```
-
-### Phase 2: RAG Inference
-
-```bash
-# Build RAG corpus
-python src/rag/structured/llama/2_build_rag_corpus.py
-
-# Run RAG-enhanced generation
-python src/rag/structured/llama/3_rag_inference.py
-
-# Evaluate results
-python src/rag/structured/llama/4_evaluate_rag.py
-```
-
-### Phase 3: Explainability
-
-```bash
-# Run all explainability analyses
-python src/explainability/run_all_explainability.py
-
-# Or run individual methods
-python src/explainability/1_evidence_attribution.py
-python src/explainability/2_confidence_scoring.py
-python src/explainability/4_factual_alignment.py
-```
-
 ## Results
 
 ### Performance Comparison (Structured Format, Hybrid PEFT+RAG)
