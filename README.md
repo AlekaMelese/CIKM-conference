@@ -15,8 +15,8 @@ We present a three-phase hybrid framework:
 3. **Phase 3 - Clinical Transparency**: Confidence scoring, factual alignment verification, and evidence attribution for safe deployment
 
 ### Key Contributions
-- Hybrid PEFT+RAG reduces hallucination by **up to 34%** compared to fine-tuning alone
-- Structured 11-section format achieves **100% section completeness** with 14.3 percentage points lower hallucination than narrative
+- Hybrid PEFT+RAG reduces hallucination by **up to 34.2%** compared to fine-tuning alone
+- Structured 11-section format achieves **100% section completeness** with 22.6 percentage points lower hallucination than narrative
 - **Llama-3.1-8B** emerges as optimal with 18.5% hallucination rate and highest ROUGE scores
 - Confidence scoring flags 77-83% of summaries as suitable for clinical use
 
