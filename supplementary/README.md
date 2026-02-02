@@ -6,7 +6,7 @@ This folder contains explainability output files from Phase 3 of the Hybrid PEFT
 
 ## File Descriptions
 
-### 1. confidence_scores.json (91 KB)
+### 1. confidence_scores.json (89.5 KB)
 Multi-factor confidence assessment for each generated summary.
 
 **Structure:**
@@ -25,7 +25,7 @@ Multi-factor confidence assessment for each generated summary.
 }
 ```
 
-### 2. factual_alignment.json (3.5 MB)
+### 2. factual_alignment.json (4.34 MB)
 Sentence-level factual verification using S-PubMedBERT embeddings.
 
 **Structure:**
@@ -53,7 +53,7 @@ Sentence-level factual verification using S-PubMedBERT embeddings.
 - `PARTIAL`: similarity 0.50-0.70 (partially supported)
 - `UNSUPPORTED`: similarity < 0.50 (potential hallucination)
 
-### 3. evidence_attributions.json (13.6 MB)
+### 3. evidence_attributions.json (16.7 MB)
 Section-level evidence attribution tracing which retrieved cases influenced each generated section.
 
 **Structure:**
