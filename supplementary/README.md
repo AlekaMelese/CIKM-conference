@@ -86,45 +86,6 @@ Section-level evidence attribution tracing which retrieved cases influenced each
 }
 ```
 
-### 4. counterfactual_explanations.json (201 KB)
-Counterfactual analysis examining how output would change if specific conditions were absent.
-
-**Structure:**
-```json
-{
-  "note_id": "12601669-DS-21",
-  "counterfactuals": [
-    {
-      "condition_removed": "hypertension",
-      "expected_changes": {
-        "assessment": "Would not mention hypertension as diagnosis",
-        "medications": ["lisinopril", "amlodipine", "losartan", "hydrochlorothiazide"],
-        "past_medical": "Would not list hypertension in medical history"
-      }
-    }
-  ]
-}
-```
-
-### 5. counterfactual_report.txt (9.5 KB)
-Human-readable summary of counterfactual analysis for 15 representative cases.
-
-**Sample:**
-```
-COUNTERFACTUAL 1: 12601669-DS-21
-COUNTERFACTUAL SCENARIO: Patient does NOT have hypertension
-
-Expected Changes:
-  - Assessment: Would not mention hypertension as diagnosis
-  - Medications: Would not include hypertension-related medications
-  - Past_Medical: Would not list hypertension in medical history
-
-CLINICAL REASONING: The model's mention of hypertension is likely driven by:
-  1. Condition-specific symptoms/findings in input
-  2. Related medications prescribed
-  3. Similar cases in retrieved evidence
-```
-
 ## Usage
 
 To load the JSON files in Python:
