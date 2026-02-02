@@ -293,7 +293,7 @@ To obtain access:
 │   │   ├── 1_evidence_attribution.py
 │   │   ├── 2_confidence_scoring.py
 │   │   ├── 4_factual_alignment.py
-│   │   └── run_all_explainability.py
+│   │   
 │   └── evaluation/              # Metrics computation
 ├── configs/                     # Hyperparameters
 ├── scripts/                     # Shell scripts for running experiments
