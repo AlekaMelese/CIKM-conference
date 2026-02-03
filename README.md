@@ -198,12 +198,12 @@ Medications, Physical Exam, Investigations, Assessment, Discharge Condition, Fol
 
 ### Generation Parameters
 
-| Model | Temperature | Top-P | Repetition Penalty | Max Tokens |
-|-------|-------------|-------|-------------------|------------|
-| Llama-3.1-8B | 0.4 | 0.95 | 1.10 | 2,048 |
-| Gemma-2-9B | 0.6 | 0.95 | 1.10 | 2,048 |
-| Phi-3-Medium-14B | 0.7 | 0.95 | 1.12 | 2,048 |
-| Qwen2.5-7B | 0.5 | 0.95 | 1.10 | 2,048 |
+| Model | Temperature | Top-P | Repetition Penalty |
+|-------|-------------|-------|-------------------|
+| Llama-3.1-8B | 0.4 | 0.95 | 1.10 |
+| Gemma-2-9B | 0.6 | 0.95 | 1.10 | 
+| Phi-3-Medium-14B | 0.7 | 0.95 | 1.12 | 
+| Qwen2.5-7B | 0.5 | 0.95 | 1.10 | 
 
 ### Inference Performance
 
