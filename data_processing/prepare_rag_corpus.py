@@ -23,7 +23,7 @@ class RAGCorpusPreparator:
     """Prepares corpus for RAG retrieval"""
 
     def __init__(self, input_path: str, output_path: str,
-                 test_size: int = 200, val_size: int = 300, random_seed: int = 42):
+                 test_size: int = 15%, val_size: int = 15%, random_seed: int = 42):
         self.input_path = Path(input_path)
         self.output_path = Path(output_path)
         self.output_path.mkdir(parents=True, exist_ok=True)
