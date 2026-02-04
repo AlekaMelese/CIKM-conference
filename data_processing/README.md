@@ -107,18 +107,4 @@ Each record contains:
 | ORTHOPAEDICS | 10.2% |
 | Others | 26.3% |
 
-## Citation
 
-If you use MIMIC-IV, please cite:
-
-```bibtex
-@article{johnson2023mimic,
-  title={MIMIC-IV, a freely accessible electronic health record dataset},
-  author={Johnson, Alistair EW and others},
-  journal={Scientific Data},
-  volume={10},
-  number={1},
-  pages={1},
-  year={2023}
-}
-```
