@@ -1,6 +1,6 @@
-# Explainable Structured Clinical Discharge Summarization: Reducing Hallucination via Hybrid Fine-Tuning and RAG
+# Explainable Structured Clinical Discharge Summarization: Reducing LLM Hallucination via Hybrid Fine-Tuning and RAG
 
-This repository contains the implementation for **"Explainable Structured Clinical Discharge Summarization: Reducing Hallucination via Hybrid Fine-Tuning and RAG"**, submitted to CHIL 2026.
+This repository contains the implementation for **"Explainable Structured Clinical Discharge Summarization: Reducing LLM Hallucination via Hybrid Fine-Tuning and RAG"**, submitted to CHIL 2026.
 
 ## Overview
 
