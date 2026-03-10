@@ -1,10 +1,3 @@
-#!/usr/bin/env python3
-"""
-Phase 2 - Step 2: Build RAG Corpus with Medical-Domain Embeddings - NARRATIVE Format
-Creates FAISS dense index based on narrative summary similarity
-Uses pritamdeka/S-PubMedBert-MS-MARCO for medical-domain semantic matching
-NO BM25 - Dense-only retrieval
-"""
 
 import os
 import sys
