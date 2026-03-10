@@ -1,8 +1,3 @@
-#!/usr/bin/env python3
-"""
-Phi-3-Medium-4K-Instruct: Constrained Generation 
-"""
-
 import torch
 from unsloth import FastLanguageModel
 from peft import PeftModel
