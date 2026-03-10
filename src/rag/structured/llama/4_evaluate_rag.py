@@ -1,9 +1,3 @@
-"""
-Phase 2 - Step 4: Evaluate RAG Performance
-Compares Phase 1 (baseline) vs Phase 2 (RAG) for hallucination reduction
-Includes all Phase 1 metrics plus RAG-specific metrics
-"""
-
 import pandas as pd
 import json
 from pathlib import Path
