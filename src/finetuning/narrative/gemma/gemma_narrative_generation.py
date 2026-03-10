@@ -1,7 +1,3 @@
-#!/usr/bin/env python3
-"""
-Gemma-2-9B-Instruct: NARRATIVE Generation Evaluation 
-"""
 
 import torch
 from unsloth import FastLanguageModel
