@@ -1,8 +1,3 @@
-#!/usr/bin/env python3
-"""
-Phi-3-Medium-4K-Instruct Fine-tuning for Medical Discharge Summary Generation
-"""
-
 import torch
 from unsloth import FastLanguageModel
 import pandas as pd
