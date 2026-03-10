@@ -1,7 +1,3 @@
-#!/usr/bin/env python3
-"""
-Llama-3.1-8B-Instruct Fine-tuning for NARRATIVE Medical Discharge Summaries
-"""
 
 import torch
 from unsloth import FastLanguageModel
