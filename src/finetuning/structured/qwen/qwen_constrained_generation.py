@@ -1,14 +1,6 @@
 #!/usr/bin/env python3
 """
-Qwen2-7B-Instruct: Constrained Generation Evaluation on Test Set
-
-Evaluates the fine-tuned Qwen2 model ONLY on the test set (10% unseen data).
-Includes:
-- Section-by-section constrained generation
-- Comprehensive metrics (ROUGE, METEOR, BERTScore)
-- Structure quality analysis
-- Publication-quality visualizations
-- Phase 2 ready (saves results for RAG and explainability)
+Qwen2-7B-Instruct: Constrained Generation Evaluation 
 """
 
 import torch
