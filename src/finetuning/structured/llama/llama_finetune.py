@@ -1,9 +1,3 @@
-#!/usr/bin/env python3
-"""
-Llama-3.1-8B-Instruct Fine-tuning for Medical Discharge Summary Generation
-
-"""
-
 import torch
 from unsloth import FastLanguageModel
 import pandas as pd
