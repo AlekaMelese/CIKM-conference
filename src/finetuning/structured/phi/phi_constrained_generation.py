@@ -1,14 +1,6 @@
 #!/usr/bin/env python3
 """
-Phi-3-Medium-4K-Instruct: Constrained Generation Evaluation on Test Set
-
-Evaluates the fine-tuned Phi-3-Medium model ONLY on the test set (10% unseen data).
-Includes:
-- Section-by-section constrained generation
-- Comprehensive metrics (ROUGE, METEOR, BERTScore)
-- Structure quality analysis
-- Publication-quality visualizations
-- Phase 2 ready (saves results for RAG and explainability)
+Phi-3-Medium-4K-Instruct: Constrained Generation 
 """
 
 import torch
