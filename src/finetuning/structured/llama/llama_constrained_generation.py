@@ -1,14 +1,7 @@
 #!/usr/bin/env python3
 """
-Llama-3.1-8B-Instruct: Constrained Generation Evaluation on Test Set
+Llama-3.1-8B-Instruct: Constrained Generation Evaluation 
 
-Evaluates the fine-tuned Llama model ONLY on the test set (10% unseen data).
-Includes:
-- Section-by-section constrained generation
-- Comprehensive metrics (ROUGE, METEOR, BERTScore)
-- Structure quality analysis
-- Publication-quality visualizations
-- Phase 2 ready (saves results for RAG and explainability)
 """
 
 import torch
