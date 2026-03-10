@@ -1,8 +1,3 @@
-#!/usr/bin/env python3
-"""
-Phi-3-Medium-4k-Instruct: NARRATIVE Generation Evaluation 
-"""
-
 import torch
 import gc
 from unsloth import FastLanguageModel
