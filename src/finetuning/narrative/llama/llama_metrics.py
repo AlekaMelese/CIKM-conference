@@ -1,7 +1,3 @@
-#!/usr/bin/env python3
-"""
-Advanced Medical Evaluation Metrics
-"""
 
 import re
 import numpy as np
