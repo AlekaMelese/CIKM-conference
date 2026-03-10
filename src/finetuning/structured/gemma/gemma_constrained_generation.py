@@ -1,8 +1,3 @@
-#!/usr/bin/env python3
-"""
-Gemma-2-9B: Constrained Generation Evaluation 
-"""
-
 import torch
 from unsloth import FastLanguageModel
 from peft import PeftModel
