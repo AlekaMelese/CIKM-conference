@@ -1,27 +1,3 @@
-#!/usr/bin/env python3
-"""
-Step 3: Hybrid PEFT + RAG Inference Pipeline
-============================================
-
-Based on "Structured Clinical Note Summarization.txt" documentation:
-
-KEY PRINCIPLES:
-1. PEFT (Fine-tuned Model): Provides clinical style and format understanding
-2. RAG (Dense Retrieval): Retrieves structurally similar cases for FORMAT GUIDANCE ONLY
-3. Anti-Hallucination: ALL factual content MUST come from current input note
-4. Few-Shot Learning: Retrieved examples show proper 11-section structure
-
-WORKFLOW:
-1. Fine-tuned Gemma-2-9B model (Phase 1) - Domain-adapted for clinical summaries
-2. For each test case:
-   a. Dense retrieval: Find top-K structurally similar cases (FAISS)
-   b. Reranking: Select best 3 examples as FORMAT templates
-   c. Prompt construction: Show templates + current input note
-   d. Generation: Extract from input note using learned clinical style
-3. Output: 11-section structured summaries with factual integrity
-
-This implements the "Hybrid PEFT + RAG" approach (excluding KG and Explainability).
-"""
 
 import os
 import sys
