@@ -1,8 +1,3 @@
-#!/usr/bin/env python3
-"""
-Qwen2-7B-Instruct: Constrained Generation Evaluation 
-"""
-
 import torch
 from unsloth import FastLanguageModel
 from peft import PeftModel
