@@ -1,14 +1,6 @@
 #!/usr/bin/env python3
 """
-Gemma-2-9B: Constrained Generation Evaluation on Test Set
-
-Evaluates the fine-tuned Gemma model ONLY on the test set (10% unseen data).
-Includes:
-- Section-by-section constrained generation
-- Comprehensive metrics (ROUGE, METEOR, BERTScore)
-- Structure quality analysis
-- Publication-quality visualizations
-- Phase 2 ready (saves results for RAG and explainability)
+Gemma-2-9B: Constrained Generation Evaluation 
 """
 
 import torch
