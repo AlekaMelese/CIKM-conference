@@ -1,28 +1,3 @@
-#!/usr/bin/env python3
-"""
-Step 3: Narrative RAG Inference Pipeline
-=========================================
-
-Based on README.md documentation for NARRATIVE RAG:
-
-KEY PRINCIPLES:
-1. PEFT (Fine-tuned Model): Provides clinical narrative style and domain adaptation
-2. RAG (Dense Retrieval): Retrieves similar NARRATIVE cases for STYLE GUIDANCE
-3. Anti-Hallucination: ALL factual content MUST come from current input note
-4. Output Format: Flowing paragraphs (NO bullets, NO headers, NO structured sections)
-
-WORKFLOW:
-1. Fine-tuned Phi-3-medium-4k-instruct model (Phase 1) - Trained on narrative summaries
-2. For each test case:
-   a. Dense retrieval: Find top-K similar NARRATIVE cases (FAISS)
-   b. Reranking: Select best 3 examples for STYLE templates
-   c. Prompt construction: Show narrative style examples + current input note
-   d. Generation: Generate flowing paragraph narrative
-3. Output: Narrative paragraph discharge summaries (NOT structured)
-
-CRITICAL: This is NARRATIVE RAG - generates flowing paragraphs, NOT 11-section structured format.
-"""
-
 import os
 import sys
 import json
