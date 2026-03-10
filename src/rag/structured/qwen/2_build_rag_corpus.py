@@ -1,9 +1,3 @@
-#!/usr/bin/env python3
-"""
-Phase 2 - Step 2: Build RAG Corpus with Medical-Domain Embeddings
-Creates FAISS and BM25 indices based on structured_target similarity
-Uses pritamdeka/S-PubMedBert-MS-MARCO for medical-domain semantic matching
-"""
 
 import os
 import sys
