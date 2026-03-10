@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-
-
 import torch
 import gc
 from unsloth import FastLanguageModel
