@@ -1,15 +1,6 @@
 #!/usr/bin/env python3
 """
 Qwen2-7B-Instruct Fine-tuning for Medical Discharge Summary Generation
-Extended Training on 5000 Samples
-
-Fine-tunes Qwen2-7B-Instruct on structured medical summaries using:
-- Unsloth optimization with 4-bit quantization
-- LoRA adapters for memory efficiency
-- Custom split: Train=4500, Val=300, Test=200
-- Publication-quality visualizations
-- Phase 2 ready (saves metadata for RAG and explainability)
-- SOTA instruction following with 128K context window
 """
 
 import torch
