@@ -1,14 +1,6 @@
 #!/usr/bin/env python3
 """
 Gemma-2-9B-IT Fine-tuning for Medical Discharge Summary Generation
-Extended Training on 5000 Samples
-
-Fine-tunes Gemma-2-9B-IT on structured medical summaries using:
-- Unsloth optimization with 4-bit quantization
-- LoRA adapters for memory efficiency
-- Custom split: Train=4500, Val=300, Test=200
-- Publication-quality visualizations
-- Phase 2 ready (saves metadata for RAG and explainability)
 """
 
 import torch
