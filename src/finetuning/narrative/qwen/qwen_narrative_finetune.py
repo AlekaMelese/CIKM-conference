@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-
-
 import torch
 from unsloth import FastLanguageModel
 import pandas as pd
