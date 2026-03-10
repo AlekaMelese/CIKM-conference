@@ -1,9 +1,3 @@
-#!/usr/bin/env python3
-"""
-Llama-3.1-8B-Instruct: Constrained Generation Evaluation 
-
-"""
-
 import torch
 from unsloth import FastLanguageModel
 from peft import PeftModel
