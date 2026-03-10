@@ -1,17 +1,5 @@
 #!/usr/bin/env python3
-"""
-Gemma-2-9B-Instruct: NARRATIVE Generation Evaluation on Test Set
 
-Evaluates the NARRATIVE fine-tuned Gemma model on the test set (200 samples).
-Generates well-organized flowing paragraph summaries (NOT structured bullet points).
-
-Includes:
-- Comprehensive narrative paragraph generation (adapts length to case complexity)
-- Full metrics (ROUGE, METEOR, BERTScore, Medical metrics)
-- Narrative quality analysis (word count, paragraph count, readability)
-- Publication-quality visualizations
-- Word-friendly export for documentation
-"""
 
 import torch
 import gc
