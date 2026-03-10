@@ -1,8 +1,3 @@
-#!/usr/bin/env python3
-"""
-Gemma-2-9B-IT Fine-tuning for Medical Discharge Summary Generation
-"""
-
 import torch
 from unsloth import FastLanguageModel
 import pandas as pd
