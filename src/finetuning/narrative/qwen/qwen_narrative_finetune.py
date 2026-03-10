@@ -1,16 +1,7 @@
 #!/usr/bin/env python3
 """
 Gemma-2-9B-Instruct Fine-tuning for NARRATIVE Medical Discharge Summaries
-Training on 5000 Samples
 
-Fine-tunes Gemma-2-9B-Instruct on NARRATIVE (well-organized paragraph) medical summaries:
-- Unsloth optimization with 4-bit quantization
-- LoRA adapters for memory efficiency
-- Custom split: Train=4500, Val=300, Test=200
-- Uses 'target' column (narrative format) NOT 'structured_target'
-- Generates comprehensive, well-organized narrative paragraphs (200-400 words)
-- Publication-quality visualizations
-- Phase 2 ready (saves metadata for RAG and explainability)
 """
 
 import torch
