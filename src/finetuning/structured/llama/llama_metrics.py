@@ -1,18 +1,5 @@
 #!/usr/bin/env python3
-"""
-Advanced Medical Evaluation Metrics
 
-Includes:
-- BLEU and METEOR Scores
-- Factual Consistency (NLI-based)
-- Medical Entity F1 (Precision/Recall for medical terms)
-- Entity Coverage
-- Medication Accuracy
-- Structure Completeness (section coverage, bullet count)
-- Hallucination Detection (coverage and rate)
-- Readability (Flesch-Kincaid)
-- Clinical Semantic Similarity (ClinicalBERT)
-"""
 
 import re
 import numpy as np
