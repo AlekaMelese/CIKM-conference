@@ -1,9 +1,3 @@
-"""
-Phase 2 - Step 4: Evaluate NARRATIVE RAG Performance
-Comprehensive evaluation of narrative RAG generation
-Includes all metrics: ROUGE, BERTScore, medical entities, factual consistency, narrative quality
-"""
-
 import pandas as pd
 import json
 from pathlib import Path
