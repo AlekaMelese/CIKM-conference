@@ -1,4 +1,4 @@
-# Explainable Structured Clinical Discharge Summarization: Reducing LLM Hallucination via Hybrid Fine-Tuning and RAG
+# Beyond Hallucination: An Auditable, Explainable Domain-Specific RAG Framework for Faithful Clinical Discharge Summarization
 
 This repository contains the implementation for **"Explainable Structured Clinical Discharge Summarization: Reducing LLM Hallucination via Hybrid Fine-Tuning and RAG"**, submitted to CHIL 2026.
 
