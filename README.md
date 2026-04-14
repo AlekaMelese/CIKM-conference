@@ -1,6 +1,6 @@
 # Beyond Hallucination: An Auditable, Explainable Domain-Specific RAG Framework for Faithful Clinical Discharge Summarization
 
-This repository contains the implementation for **"Explainable Structured Clinical Discharge Summarization: Reducing LLM Hallucination via Hybrid Fine-Tuning and RAG"**, submitted to CHIL 2026.
+This repository contains the implementation for **"Explainable Structured Clinical Discharge Summarization: Reducing LLM Hallucination via Hybrid Fine-Tuning and RAG"**, submitted to CIKM 2026.
 
 ## Overview
 
@@ -326,7 +326,7 @@ To obtain access:
 @inproceedings{anonymous2026hybrid,
   title={Reducing Hallucination in Clinical Discharge Summarization via Hybrid PEFT and RAG},
   author={Anonymous},
-  booktitle={Conference on Health, Inference, and Learning (CHIL)},
+  booktitle={Conference on Health, Inference, and Learning (CIKM)},
   year={2026}
 }
 ```
