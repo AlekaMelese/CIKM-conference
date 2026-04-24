@@ -2,7 +2,7 @@
 
 Materials for the human evaluation: 100 generated discharge summaries rated by four annotators (three medical students and one senior postdoctoral clinician at a collaborating university hospital).
 
-MIMIC-IV-derived content is not included, in line with the PhysioNet Data Use Agreement (see [ETHICS.md](ETHICS.md)).
+MIMIC-IV-derived content is not included, in line with the PhysioNet Data Use Agreement.
 
 ## Interface preview
 
@@ -18,7 +18,6 @@ MIMIC-IV-derived content is not included, in line with the PhysioNet Data Use Ag
 | [`ui/app.py`](ui/app.py) | Gradio annotation interface |
 | [`ui/requirements.txt`](ui/requirements.txt) | Python dependencies |
 | [`compute_agreement.py`](compute_agreement.py) | Fleiss' kappa, Cohen's kappa, ICC, and Spearman correlation script |
-| [`ETHICS.md`](ETHICS.md) | MIMIC-IV DUA compliance statement |
 
 ## How to run
 
