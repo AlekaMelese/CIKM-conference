@@ -1,0 +1,305 @@
+
+================================================================================
+ANNOTATION GUIDELINES: Clinical Validation of Factual Grounding
+                       in LLM-Generated Discharge Summaries
+================================================================================
+
+TASK OVERVIEW
+=============
+You will evaluate LLM-generated clinical discharge summaries as a whole.
+For each summary, you will be shown side-by-side:
+
+  1. The SOURCE CLINICAL NOTE (ground truth written by the physician)
+  2. The GENERATED SUMMARY (structured discharge summary to evaluate)
+
+Your task is to determine whether the generated summary is factually
+grounded in the source clinical note.
+
+IMPORTANT: Evaluate the summary holistically — consider whether the clinical
+facts across all sections are supported by the source note. If a section
+contains information you cannot verify from the source note, factor that
+into your overall grounding judgment.
+
+
+ABOUT THE DATASET
+=================
+The clinical texts you will evaluate come from a DE-IDENTIFIED dataset. The dataset contains NO personal
+health information — patient names, physician names, exact dates, admission
+numbers, addresses, and other identifiers were REMOVED before the data was
+released.
+
+Because of this de-identification process, you may notice:
+- Readability, grammar, and sentence flow can look "wrong" in places
+- Dates are stripped — prepositions like "in", "on", "at", "from" may
+  be followed by nothing (e.g., "admitted in ,")
+- Some proper nouns are replaced with placeholders ("___", "[**...**]")
+  or simply removed, leaving small gaps in the sentence
+- Sentences sometimes appear truncated where a scrubbed PHI element sat
+
+These are PRE-PROCESSING ARTIFACTS, not clinical errors or hallucinations.
+They appear in BOTH Text A and Text B, so they cancel out when you compare
+the two versions. Your job is to assess the CLINICAL CONTENT — diagnoses,
+medications, dosages, findings — not the text quality.
+
+
+EVALUATION CRITERIA
+===================
+
+1. FACTUAL GROUNDING (Required)
+   Choose one:
+   - "Fully Supported"  — All clinical facts in the summary can be verified
+     from the source note. Medications, diagnoses, procedures, lab values,
+     and clinical findings all match across all sections.
+   - "Partially Supported" — Some facts are verifiable from the source note,
+     but parts are unverifiable, imprecise, or missing context. For example,
+     a correct diagnosis with a wrong date, or correct medication with
+     missing dosage.
+   - "Unsupported" — The summary contains clinical information that
+     contradicts or cannot be found in the source note. This includes
+     fabricated medications, wrong diagnoses, invented lab values, or
+     procedures not mentioned in the source.
+   - "Cannot Determine" — Insufficient information in the source note to judge.
+     Use this sparingly.
+
+   TIP — AUTO-FILL BEHAVIOR:
+   To save time, the UI auto-fills related fields based on your choice here
+   AND on Q3 (Error Type):
+     Factual Grounding = "Fully Supported"
+        → Error Type auto-set to "None"
+        → Clinical Severity auto-set to "None"
+     Factual Grounding = "Unsupported"
+        → "None" is removed from Error Type choices (error required:
+          Fabrication / Inaccuracy / Omission)
+     Error Type = "None" (set manually)
+        → Factual Grounding auto-set to "Fully Supported"
+        → Clinical Severity auto-set to "None"
+   The auto-fill is only a suggestion. You can still change any field
+   when your clinical judgment disagrees. Always verify all required
+   fields match your actual assessment before submitting.
+
+2. GROUNDING CONFIDENCE (Required)
+   How confident are you in your Factual Grounding judgment above?
+   Rate 1-5:
+   1 = Very uncertain — the source note is unclear or incomplete,
+       making it hard to verify the generated content
+   2 = Somewhat uncertain — you can partially verify but some
+       parts remain ambiguous
+   3 = Moderately confident — most facts are verifiable but
+       a few are unclear
+   4 = Confident — you are fairly sure of your grounding judgment
+       with only minor uncertainty
+   5 = Very confident — the evidence clearly supports your judgment
+       (e.g., obvious match or obvious contradiction)
+
+3. ERROR TYPE (Required if Unsupported; optional if Partially Supported)
+   Choose one:
+   - "None" — No error found.
+   - "Fabrication" — Information that does not exist in the source note at all.
+     This includes invented facts, made-up medications, fabricated lab values,
+     or general medical knowledge added by the model that was not in this
+     patient's note.
+     Examples: medication never prescribed, invented vital signs, stating
+     "lisinopril is an ACE inhibitor" when the note only says "lisinopril"
+   - "Inaccuracy" — Information that exists in the source note but is wrong,
+     altered, or misrepresented in the generated summary. This includes wrong
+     dosages, wrong dates, swapped laterality, admission findings reported as
+     discharge status, or information that may have come from another patient.
+     Examples: metoprolol 50mg instead of 25mg, admission temperature reported
+     as discharge temperature, surgical history not found in this patient's note
+   - "Omission" — Critical qualifying information from the source note is
+     dropped, changing the clinical meaning of the summary.
+     Examples: "hypertension" instead of "well-controlled hypertension on
+     lisinopril", dropping "rapid ventricular response" from atrial
+     fibrillation diagnosis
+
+4. CLINICAL SEVERITY (Required)
+   Choose one:
+   - "None" — No meaningful error detected
+   - "Minor" — Clinically insignificant
+     Examples: Minor wording differences, formatting issues, redundant
+     information, trivially wrong detail that wouldn't affect care
+   - "Major" — Clinically significant but unlikely to cause immediate harm
+     Examples: Wrong date of procedure, incorrect specialist name, lab value
+     from wrong date, attribution of finding to wrong imaging study
+   - "Critical" — Could directly cause patient harm if acted upon
+     Examples: Wrong medication/dosage, incorrect allergy, wrong procedure
+     side, dangerous drug interaction missed, incorrect diagnosis leading
+     to wrong treatment
+
+5. CLARITY (Required, 1-5 Likert)
+   How clear, readable, and well-organized is the generated summary?
+   1 = Very poor — disorganized, incoherent, or difficult to follow
+   2 = Poor — multiple unclear passages or confusing structure
+   3 = Acceptable — understandable but could be improved
+   4 = Good — clear and well-organized with minor issues
+   5 = Excellent — clear, well-structured, and easy to read
+
+6. CLINICAL UTILITY (Required, 1-5 Likert)
+   Would a clinician use this summary for patient handoff or discharge?
+   1 = Not usable — would need to be rewritten entirely
+   2 = Barely usable — requires major edits before clinical use
+   3 = Usable with edits — needs moderate corrections
+   4 = Mostly usable — minor edits needed, clinically adequate
+   5 = Ready to use — suitable for clinical handoff as-is
+
+7. DOCUMENT-LEVEL COMPLETENESS (Optional)
+   In addition to factual grounding, evaluate the summary for completeness.
+   - "Crucial Omission" — Did the generated summary entirely miss a critical diagnosis,
+     medication, or procedure that was prominent in the source note?
+   - "Sufficient" — The summary captured all necessary, clinically relevant elements
+     from the source note without major omissions.
+
+8. FREE-TEXT NOTES (Optional)
+   Any additional observations, e.g.:
+   - What specific error you identified
+   - Why you found it difficult to judge
+   - Domain-specific context that informed your decision
+
+SECTION-SPECIFIC GUIDANCE
+=========================
+
+Different clinical sections carry different risk levels. Keep these in mind:
+
+HIGH-RISK SECTIONS (errors here are often Critical or Major):
+  - Medications: Wrong drug, dosage, frequency, or route
+  - Assessment/Impression: Wrong diagnosis or clinical reasoning
+  - Chief Complaint: Wrong reason for admission
+
+MEDIUM-RISK SECTIONS (errors often Major or Minor):
+  - HPI: Distorted timeline or symptoms
+  - Labs/Imaging: Wrong values or wrong test attribution
+  - Physical Examination: Wrong findings
+
+LOWER-RISK SECTIONS (errors often Minor):
+  - Discharge Condition: Wording differences
+  - Follow-Up: Scheduling details
+  - Case Type: Classification differences
+
+
+ABOUT THE SOURCE NOTES
+======================
+The source clinical notes are written by physicians and may not always
+have clear or consistent section headers. Some clinical information
+(e.g., follow-up plans, medication changes, diagnoses) may appear
+without a labeled section — embedded within "Brief hospital course",
+"Discharge instructions", or as free text. Use Ctrl+F / Cmd+F to
+search for specific terms when verifying facts.
+
+
+GENERAL INSTRUCTIONS
+====================
+- Evaluate each summary as a whole, considering all 11 sections together
+- Focus on CLINICAL accuracy, not grammatical style or formatting
+- Section headers and formatting artifacts should not count against grounding
+- Consider medical abbreviations as equivalent to their expanded forms
+  (e.g., "HTN" = "hypertension", "DM" = "diabetes mellitus")
+- Compare the generated summary directly against the source clinical note
+  to verify every clinical fact
+
+ABSTRACTIVE SUMMARIZATION NOTE:
+These summaries are generated using abstractive (not extractive)
+summarization. Key characteristics to be aware of:
+
+  1. PARAPHRASING: The model rephrases clinical information in its own
+     words. The generated text will NOT match the source note
+     word-for-word.
+
+  2. CONDENSATION: The model compresses long clinical notes into shorter
+     structured summaries. Not every detail from the source note will
+     appear in the summary.
+
+  3. TOKEN LIMITS: The models have a maximum output length. Very long
+     source notes may result in summaries where later sections are
+     shorter or less detailed.
+
+Use your clinical judgment to evaluate the generated summary.
+
+IMPORTANT: You are evaluating whether the GENERATED SUMMARY is factually
+grounded in the SOURCE NOTE. Consider all sections holistically when
+assigning the overall grounding label.
+
+
+EXAMPLE ANNOTATIONS
+===================
+
+Example 1 (Fully Supported):
+  In the Chief Complaint section, the generated summary states:
+  "Patient presented with chest pain radiating to the left arm"
+  The source note contains: "CC: chest pain, radiating to left arm"
+  -> Grounding: Fully Supported
+  -> Confidence: 5
+  -> Error type: None
+  -> Severity: None
+  -> Clarity: 5
+  -> Clinical Utility: 5
+
+Example 2 (Fabrication — info not in source):
+  In the Assessment section, the generated summary states:
+  "Patient was diagnosed with acute pancreatitis"
+  But the source note says: "assessment: acute cholecystitis"
+  -> Grounding: Unsupported (pancreatitis vs cholecystitis)
+  -> Confidence: 5
+  -> Error type: Fabrication
+  -> Severity: Critical (wrong diagnosis)
+  -> Clarity: 4
+  -> Clinical Utility: 1 (wrong diagnosis makes it dangerous)
+
+Example 3 (Fabrication — added medical knowledge):
+  In the Medications section, the generated summary states:
+  "Lisinopril, an ACE inhibitor for blood pressure control, was continued"
+  The source note only says: "discharge meds: lisinopril 10mg daily"
+  -> Grounding: Partially Supported
+  -> Confidence: 4
+  -> Error type: Fabrication (the ACE inhibitor detail is not in this patient's note)
+  -> Severity: Minor (true info but not from the source)
+
+Example 4 (Inaccuracy — wrong dosage):
+  In the Medications section, the generated summary states:
+  "Patient was discharged on metoprolol 50mg twice daily"
+  But the source note says: "discharge medications: metoprolol 25mg BID"
+  -> Grounding: Partially Supported (dosage wrong: 50mg vs 25mg)
+  -> Confidence: 5
+  -> Error type: Inaccuracy
+  -> Severity: Critical (wrong medication dosage)
+
+Example 5 (Inaccuracy — wrong temporal context):
+  In the Discharge Condition section, the generated summary states:
+  "Patient was febrile with temperature 101.2F"
+  But the source note says: "admission vitals: T 101.2F...
+  discharge vitals: T 98.6F afebrile"
+  -> Grounding: Unsupported (admission finding reported as discharge status)
+  -> Confidence: 5
+  -> Error type: Inaccuracy
+  -> Severity: Major (wrong context could affect clinical decisions)
+
+Example 6 (Inaccuracy — info possibly from another patient):
+  In the Past Medical History section, the generated summary states:
+  "History of Type 2 diabetes and bilateral knee replacement"
+  But the source note says: "PMH: Type 2 diabetes, GERD, hypertension"
+  -> Grounding: Partially Supported (diabetes correct, knee replacement not in source)
+  -> Confidence: 4
+  -> Error type: Inaccuracy
+  -> Severity: Major (wrong surgical history)
+
+Example 7 (Omission):
+  In the Assessment section, the generated summary states:
+  "Patient has atrial fibrillation"
+  But the source note says: "new-onset atrial fibrillation with rapid
+  ventricular response, rate 140s, started on IV amiodarone drip"
+  -> Grounding: Partially Supported (diagnosis correct but critical details dropped)
+  -> Confidence: 4
+  -> Error type: Omission
+  -> Severity: Major (dropped severity and treatment, changing clinical picture)
+
+Example 8 (Document-Level Completeness):
+  The source note mentions: sepsis, acute kidney injury, intubation, pressors
+  The generated summary covers: sepsis, intubation, pressors
+  -> Document Completeness: Crucial Omission (acute kidney injury entirely missing)
+
+
+
+CONTACT
+=======
+For questions about the annotation task, contact the study coordinators.
+
+================================================================================
