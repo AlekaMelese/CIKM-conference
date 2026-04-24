@@ -8,6 +8,9 @@ MIMIC-IV-derived content is not included, in line with the PhysioNet Data Use Ag
 
 ![Annotation UI — welcome screen](ui/screenshots/01_welcome.png)
 
+## Evalution preview
+
+![Annotation UI — welcome screen](ui/screenshots/02_evaluation.png)
 ## Files
 
 | File | Purpose |
